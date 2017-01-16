@@ -18,53 +18,58 @@
   Taky jsem nasel less soubor pro jquery-ui slider.
 
 */
-// promenne bootstrap grid systemu
+/* promenne bootstrap grid systemu */
 @import "../less/vars.less";
-// soubory mixinu samotneho bootstrap grid systemu
-// jak jsem pochopil, mixiny jsou tzv. funkce, ktere se volaji pro vypocet
-// hodnot paddingu marginu apod. ciselne hodnoty na zakalde promennych,
-// ktere mame definovane ve less/vars.less
+/* soubory mixinu samotneho bootstrap grid systemu
+ jak jsem pochopil, mixiny jsou tzv. funkce, ktere se volaji pro vypocet
+ hodnot paddingu marginu apod. ciselne hodnoty na zakalde promennych,
+ ktere mame definovane ve less/vars.less */
 @import "../less/mixins/grid-framework.less";
 @import "../less/mixins/grid.less";
-// import samotneho grid systemu
+/* import samotneho grid systemu */
 @import "../less/grid.less";
-// import less pro plugin nice-select.czz
-// nice-select se pouziva pro zobrazeni custom select boxu
+/*
+ import less pro plugin nice-select.czz
+ nice-select se pouziva pro zobrazeni custom select boxu
+ */
 @import "../less/nice-select.less";
-// import less pro plugin jquery-ui slider widget
-// slider widget potrebuje pro praci se slidery
+/*
+ import less pro plugin jquery-ui slider widget
+ slider widget potrebuje pro praci se slidery
+*/
 @import "../less/jquery.ui.slider.less";
 
-// za background mame gradient ktere zacina barvou #51b5c5
-// a prirazuje se do promenne @background_left_gradient_color
+/*
+ za background mame gradient ktere zacina barvou #51b5c5
+ a prirazuje se do promenne @background_left_gradient_color
+*/
 @background_left_gradient_color: #51b5c5;
 
-// gradient backgroundu skonci barvou #9ddadf
-// ktera se prirazuje do @background_right_gradient_color
+/*
+ gradient backgroundu skonci barvou #9ddadf
+ ktera se prirazuje do @background_right_gradient_color
+*/
 @background_right_gradient_color: #9ddadf;
 
-// prednastaveni barvy pro tag <strong>
+/*  prednastaveni barvy pro tag <strong>  */
 @strong_color: #fa7f41;
 
-@font-face {font-family: "montserratregular";
-  src: url("../fonts/montserrat-regular-webfont.eot"); /* IE9*/
-  src: url("../fonts/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/montserrat-regular-webfont.woff2") format("woff2"), /* chrome、firefox */
-  url("../fonts/montserrat-regular-webfont.woff") format("woff"), /* chrome、firefox */
-  url("../fonts/montserrat-regular-webfont.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("../fonts/montserrat-regular-webfont.svg#montserratregular") format("svg"); /* iOS 4.1- */
-}
-// odstranujeme defaultni marginy a paddingy pro html a body
-// a zadavame font stranky
+/*
+ odstranujeme defaultni marginy a paddingy pro html a body
+ a zadavame font stranky
+ */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'montserratregular', sans-serif;
+  font-family: 'Open Sans', 'Open Sans', sans-serif;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
-// hlavicky,
-// h2 pro zahlavi bloku .calc-block
-// h4 pro summary
+/*
+ hlavicky,
+ h2 pro zahlavi bloku .calc-block
+ h4 pro summary
+ */
 h2, h4 {
   margin: 0;
   font-weight: 400;
@@ -80,9 +85,11 @@ h4 {
   text-transform: uppercase;
 }
 
-// zakladni blok, ktery ma v sobe vsechny ostatni bloky
-// cely block s minimalni vyskou 500px
-// background blocku je ve tavru gradientu
+/*
+ zakladni blok, ktery ma v sobe vsechny ostatni bloky
+ cely block s minimalni vyskou 500px
+ background blocku je ve tavru gradientu
+ */
 .calc-block {
   position: relative;
   min-height: 500px;
@@ -94,7 +101,9 @@ h4 {
   background: -moz-linear-gradient(left, @background_left_gradient_color, @background_right_gradient_color);
   background: -webkit-linear-gradient(left, @background_left_gradient_color, @background_right_gradient_color);
 
-  // obrazek v leve casti bloku .calc-blcok
+  /*
+   obrazek v leve casti bloku .calc-blcok
+ */
   .money-heart-img {
     position: absolute;
     top: 50%;
@@ -103,13 +112,17 @@ h4 {
     z-index: 1;
   }
 
-  // hlavicka bloku .calc-block
+  /*
+   hlavicka bloku .calc-block
+ */
   h2 {
     text-align: center;
     padding: 40px 0px 0px 0px;
   }
 
-  // vydeleny oranzovy text v hlavicce bloku .calc-block
+  /*
+   vydeleny oranzovy text v hlavicce bloku .calc-block
+ */
   h2 > strong {
     color: @strong_color;
     white-space: nowrap;
@@ -117,17 +130,20 @@ h4 {
 
 }
 
-// tady jsem nastavil zvlastni styly pro slider.
-// defaulnti styly jsou v souboru jquery.ui.slider.less
+/*
+ tady jsem nastavil zvlastni styly pro slider.
+ defaulnti styly jsou v souboru jquery.ui.slider.less
+ */
 .ui-slider {
 
-  // pochybujici block slideru
+  /*
+   pochybujici block slideru
+ */
   .ui-slider-handle {
     width: 20px;
     height: 20px;
     top: 50%;
     margin-top: -10px;
-    //margin-left: -10px;
     background: #fff;
     position: absolute;
     -webkit-border-radius: 50%;
@@ -144,9 +160,12 @@ h4 {
     transition: -webkit-transform .1s, -moz-transform .1s, -o-transform .1s, transform .1s;
   }
 
-  // oranzova tecka v pochybujicim bloku.
-  // :before pouzivame protoze plugin vytvari v DOMu jen samotny pochybujici blok
-  // muze tam byt klidne i :after
+  /*
+  oranzova tecka v pochybujicim bloku.
+   :before pouzivame protoze plugin vytvari v DOMu jen samotny pochybujici blok
+   muze tam byt klidne i :after
+ */
+
   .ui-slider-handle:before {
     content: '';
     width: 8px;
@@ -167,7 +186,9 @@ h4 {
     background: #fb8044;
   }
 
-  // barevna cast slideru
+  /*
+   barevna cast slideru
+ */
   .ui-slider-range {
     position: absolute;
     height: 8px;
@@ -183,17 +204,23 @@ h4 {
 
 }
 
-// block, ktera ma v sobe slidery a jejich hodnoty.
-// nastavil jsem z-index, aby obrazek v leve casti bloku ne prekryval tyto slidery
+/*
+ block, ktera ma v sobe slidery a jejich hodnoty.
+ nastavil jsem z-index, aby obrazek v leve casti bloku ne prekryval tyto slidery
+ */
 .calc {
   z-index: 4;
   margin-top: 35px;
 
-  // blok, ktery ma v sobe jednotlive slidery
+  /*
+   blok, ktery ma v sobe jednotlive slidery
+ */
   .slider-wrapper {
     margin-bottom: 40px;
 
-    // blok slideru
+    /*
+     blok slideru
+     */
     .slider {
 
       border-radius: 30px;
@@ -201,7 +228,9 @@ h4 {
 
     }
 
-    // blok hlavicky slideru
+    /*
+     blok hlavicky slideru
+ */
     .label {
       color: #fff;
       margin-bottom: 1em;
@@ -210,9 +239,11 @@ h4 {
     }
   }
 
-  // wrapper
-  // pro blok s hodnotou, kterou ma slider
-  // pro block s oznacenim bud %, kc nebo mesic
+  /*
+ wrapper
+   pro blok s hodnotou, kterou ma slider
+   pro block s oznacenim bud %, kc nebo mesic
+ */
   .slider-value-container-outer {
     margin: 12px 0px;
     max-width: 260px;
@@ -220,7 +251,9 @@ h4 {
     margin-left: auto;
     margin-right: auto;
 
-    //blok s hodnotou, kterou ma slider
+    /*
+        blok s hodnotou, kterou ma slider
+    */
     .slider-value-container {
       -webkit-border-radius: 50px;
       -webkit-background-clip: padding-box;
@@ -238,7 +271,9 @@ h4 {
       color: #fff;
       padding: 5px 20px;
 
-      // oznaceni hodnoty slideru %, Kc nebo mesic
+      /*
+       oznaceni hodnoty slideru %, Kc nebo mesic
+       */
       .slider-value-label {
         position: absolute;
         width: 76px;
@@ -253,7 +288,9 @@ h4 {
         pointer-events: none;
       }
 
-      // block s hodnotou slideru
+      /*
+       block s hodnotou slideru
+      */
       .slider-value {
         display: block;
         text-align: center;
@@ -262,18 +299,24 @@ h4 {
     }
   }
 
-  // block, ktery obsahuje vysledek
+  /*
+   block, ktery obsahuje vysledek
+ */
   .results {
     text-align: center;
   }
 }
 
-// blok, ktery ma v sobe selectbox
+/*
+ blok, ktery ma v sobe selectbox
+ */
 .select-wrapper {
   margin-bottom: 20px;
 }
 
-// blok pro summary
+/*
+ blok pro summary
+ */
 .result-value {
   color: #fa7f41;
   font-size: 32px;
@@ -283,7 +326,9 @@ h4 {
   white-space: nowrap;
 }
 
-// hlavicka pro summary
+/*
+ hlavicka pro summary
+ */
 .summary {
   padding: 9px 0px;
 }
@@ -293,26 +338,34 @@ h4 {
 /***************************************   MEDIA QUERIES   **********************************/
 /********************************************************************************************/
 
-// urcujeme break pointy pro jednotlive sirky obrazovky.
-// vetsina jsou nastavena v grid systemu bootstrapu a jsou popsane v grid.less
-// jinak pouzite col-* a push-* jsem popsal i v index.html
+/*
+ urcujeme break pointy pro jednotlive sirky obrazovky.
+ vetsina jsou nastavena v grid systemu bootstrapu a jsou popsane v grid.less
+ jinak pouzite col-* a push-* jsem popsal i v index.html
 
-// v main.less mame jen ty bloky, ktery jsem vytvoril sam
+ v main.less mame jen ty bloky, ktery jsem vytvoril sam
 
-// potrebujeme pro nastaveni zvlastnich pripadu pro sirku minimalne 768px a vice
-// kdyz sirka obrazovky bude mene nez 768px tak se budou pouzivat nastaveni zadane pred tim
+ potrebujeme pro nastaveni zvlastnich pripadu pro sirku minimalne 768px a vice
+ kdyz sirka obrazovky bude mene nez 768px tak se budou pouzivat nastaveni zadane pred tim
+
+ */
 @media (min-width: 768px) {
 
   .calc {
 
-    // pro obrazovku sirky 768px a vice, hlavicka vysledku "Summary" se vyrovnava vlevo
+    /*
+     pro obrazovku sirky 768px a vice, hlavicka vysledku "Summary" se vyrovnava vlevo
+ */
     .results {
       text-align: left;
     }
 
   }
 
-  // pro obrazovku sirky 768px a vice, text vysledku se vyrovnava vpravo
+  /*
+   pro obrazovku sirky 768px a vice, text vysledku se vyrovnava vpravo
+
+ */
   .result-value {
     text-align: right;
     margin: 0;
@@ -320,11 +373,16 @@ h4 {
 
 }
 
-// potrebujeme pro nastaveni zvlastnich pripadu pro sirku minimalne 991px a vice
-// kdyz sirka obrazovky bude mene nez 991px tak se budou pouzivat nastaveni zadane pred tim
+/*
+ potrebujeme pro nastaveni zvlastnich pripadu pro sirku minimalne 991px a vice
+ kdyz sirka obrazovky bude mene nez 991px tak se budou pouzivat nastaveni zadane pred tim
+ */
 @media (max-width: 991px) {
 
-  //pro obrazovku sirky 991px a vice obrazek uvnir blocku .calc-block posouvame vravo
+  /*
+  pro obrazovku sirky 991px a vice obrazek uvnir blocku .calc-block posouvame vravo
+
+ */
   .calc-block {
     .money-heart-img {
       left: -152px;
